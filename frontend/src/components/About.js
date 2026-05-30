@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import bgImg from "./images/background_img.jpg";
 import roboLab from "./images/robo_lab.jpg";
 
 function About() {
-  const [active, setActive] = React.useState(0);
+  const [active, setActive] = useState(0);
+
+  const yellow = "#FFD51E";
+  const cyan = "#38bdf8";
+  const blue = "#3b82f6";
+  const text = "#c1c8d2";
 
   const learnData = [
     {
@@ -26,372 +31,331 @@ function About() {
   ];
 
   const whatWeDo = [
-    {
-      icon: "fa-solid fa-robot",
-      title: "Robotics Kits & Tools",
-    },
-    {
-      icon: "fa-solid fa-chalkboard-user",
-      title: "Training Programs & Workshops",
-    },
-    {
-      icon: "fa-solid fa-screwdriver-wrench",
-      title: "Lab Setup Services",
-    },
-    {
-      icon: "fa-solid fa-briefcase",
-      title: "Internship & Project-Based Learning",
-    },
+    [
+      "fa-solid fa-robot",
+      "Robotics Kits & Tools",
+      "Hands-on kits that help students understand electronics, robotics, and automation practically.",
+    ],
+    [
+      "fa-solid fa-chalkboard-user",
+      "Training Programs & Workshops",
+      "Interactive STEM programs designed for schools, institutions, and young innovators.",
+    ],
+    [
+      "fa-solid fa-screwdriver-wrench",
+      "Lab Setup Services",
+      "Support for setting up innovation labs, robotics labs, and Atal Tinkering Labs.",
+    ],
+    [
+      "fa-solid fa-briefcase",
+      "Internship & Project-Based Learning",
+      "Guided learning experiences that connect students with real-world technology projects.",
+    ],
   ];
 
   const whyChoose = [
-    "Hands-on, project-based learning",
-    "Industry-relevant training",
-    "Innovation-focused approach",
-    "Real-world exposure",
-    "Customized solutions",
+    [
+      "STEM Programs for Ages 5+",
+      "Learning experiences designed for young students as well as budding engineers.",
+    ],
+    [
+      "Hands-On Practical Learning",
+      "Students learn by building, testing, experimenting, and improving real projects.",
+    ],
+    [
+      "21st-Century Skill Building",
+      "We focus on teamwork, creativity, critical thinking, and problem-solving.",
+    ],
+    [
+      "Professional Trainer Network",
+      "Our trainers and teachers guide students with practical and industry-relevant knowledge.",
+    ],
+    [
+      "Real-World Technology Exposure",
+      "Students explore robotics, coding, IoT, embedded systems, and project-based innovation.",
+    ],
   ];
 
-  const pageStyle = {
-    minHeight: "100vh",
-    color: "#ffffff",
-    fontFamily: "Inter",
-    background: `
-      radial-gradient(circle at top left, rgba(0,191,255,0.18), transparent 28%),
-      radial-gradient(circle at bottom right, rgba(59,130,246,0.20), transparent 30%),
-      linear-gradient(rgba(4, 18, 45, 0.94), rgba(6, 20, 48, 0.96)),
-      url(${bgImg})
-    `,
+  const page = {
+    background: `radial-gradient(circle at top right, rgba(30,58,138,0.9), rgba(2,6,23,0.95)), url(${bgImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundAttachment: "fixed",
-    paddingTop: "135px",
-    overflow: "hidden",
+    backgroundRepeat: "no-repeat",
+    color: "white",
+    minHeight: "100vh",
+    paddingTop: "120px",
+    fontFamily: "Inter",
   };
 
-  const containerStyle = {
-    width: "min(1180px, 90%)",
-    margin: "0 auto",
-  };
-
-  const heroStyle = {
-    ...containerStyle,
-    minHeight: "430px",
-    display: "grid",
-    gridTemplateColumns: "1.1fr 0.9fr",
-    alignItems: "center",
-    gap: "45px",
-    padding: "40px 0 55px",
-  };
-
-  const heroTitleStyle = {
+  const heading = {
     fontFamily: "Orbitron",
-    fontSize: "clamp(2.8rem, 6vw, 5rem)",
-    letterSpacing: "4px",
-    fontWeight: "500",
+    color: yellow,
+    fontWeight: "bold",
+    fontSize: "clamp(1.75rem, 3.2vw, 2.55rem)",
+    letterSpacing: "3px",
     marginBottom: "18px",
   };
 
-  const eyebrowStyle = {
-    color: "#38bdf8",
-    textTransform: "uppercase",
-    letterSpacing: "3px",
-    fontSize: "13px",
-    fontWeight: "700",
-    marginBottom: "14px",
-  };
-
-  const textStyle = {
-    color: "#dbeafe",
-    lineHeight: "1.8",
+  const para = {
+    color: text,
     fontSize: "16px",
+    lineHeight: "1.7",
     fontFamily: "Inter",
-    margin: 0,
   };
 
-  const sectionStyle = {
-    ...containerStyle,
-    padding: "45px 0",
-  };
-
-  const headingStyle = {
-    fontFamily: "Orbitron",
-    fontSize: "clamp(2rem, 4vw, 3rem)",
-    letterSpacing: "4px",
-    fontWeight: "500",
-    marginBottom: "16px",
-    textAlign: "center",
-  };
-
-  const smallHeadingStyle = {
-    fontFamily: "Orbitron",
-    fontSize: "1.35rem",
-    letterSpacing: "2px",
-    fontWeight: "500",
-    marginBottom: "12px",
-  };
-
-  const glassBoxStyle = {
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.07))",
-    border: "1px solid rgba(255,255,255,0.20)",
-    boxShadow: "0 18px 45px rgba(0,0,0,0.25), 0 0 28px rgba(56,189,248,0.14)",
-    backdropFilter: "blur(14px)",
-    WebkitBackdropFilter: "blur(14px)",
-    borderRadius: "22px",
-  };
-
-  const heroImageBox = {
-    ...glassBoxStyle,
-    padding: "12px",
-    position: "relative",
-  };
-
-  const heroImageStyle = {
-    width: "100%",
-    height: "360px",
-    objectFit: "cover",
+  const card = {
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.14)",
     borderRadius: "18px",
-    display: "block",
+    padding: "28px",
+    height: "100%",
+    backdropFilter: "blur(10px)",
+    boxShadow: "0 15px 35px rgba(0,0,0,0.25)",
+    transition: "all 0.35s ease",
   };
 
-  const twoColumnGrid = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "26px",
-    alignItems: "stretch",
-  };
-
-  const contentCardStyle = {
-    ...glassBoxStyle,
-    padding: "34px",
-    textAlign: "left",
-  };
-
-  const centerContentCardStyle = {
-    ...glassBoxStyle,
-    padding: "34px",
-    textAlign: "center",
-  };
-
-  const featureGrid = {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: "18px",
-    marginTop: "28px",
-  };
-
-  const featureCardStyle = {
-    ...glassBoxStyle,
-    padding: "24px 18px",
-    textAlign: "center",
-    transition: "0.3s ease",
-  };
-
-  const iconCircleStyle = {
-    width: "52px",
-    height: "52px",
+  const iconCircle = {
+    width: "55px",
+    height: "55px",
     borderRadius: "50%",
     display: "grid",
     placeItems: "center",
-    margin: "0 auto 16px",
-    background: "rgba(14,165,233,0.16)",
+    margin: "0 auto 18px",
+    background: "rgba(59,130,246,0.18)",
     border: "1px solid rgba(56,189,248,0.35)",
     color: "#67e8f9",
     fontSize: "22px",
   };
 
-  const buttonWrapStyle = {
-    display: "flex",
-    justifyContent: "center",
-    gap: "16px",
-    flexWrap: "wrap",
-    marginTop: "28px",
+  const glowEnter = (e) => {
+    e.currentTarget.style.transform = "translateY(-8px)";
+    e.currentTarget.style.borderColor = "rgba(56,189,248,0.75)";
+    e.currentTarget.style.boxShadow =
+      "0 0 28px rgba(56,189,248,0.35), 0 18px 40px rgba(59,130,246,0.25)";
   };
 
-  const learnButtonStyle = (index) => ({
+  const glowLeave = (e) => {
+    e.currentTarget.style.transform = "translateY(0)";
+    e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)";
+    e.currentTarget.style.boxShadow = "0 15px 35px rgba(0,0,0,0.25)";
+  };
+
+  const learnBtn = (index) => ({
     padding: "12px 24px",
-    borderRadius: "999px",
+    borderRadius: "50px",
     border: "1px solid rgba(56,189,248,0.75)",
     background:
       active === index
         ? "linear-gradient(135deg, #06b6d4, #38bdf8)"
-        : "rgba(255,255,255,0.04)",
-    color: active === index ? "#06172f" : "#ffffff",
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-    transform: active === index ? "translateY(-4px)" : "translateY(0)",
-    boxShadow:
-      active === index ? "0 14px 28px rgba(56,189,248,0.28)" : "none",
-    fontFamily: "Inter",
-    fontWeight: "700",
+        : "rgba(255,255,255,0.035)",
+    color: active === index ? "#06172f" : "white",
+    fontWeight: "bold",
     minWidth: "190px",
+    cursor: "pointer",
+    transition: "all 0.35s ease",
+    boxShadow:
+      active === index
+        ? "0 0 24px rgba(56,189,248,0.45), 0 12px 26px rgba(56,189,248,0.25)"
+        : "0 0 10px rgba(56,189,248,0.08)",
   });
 
-  const missionVisionGrid = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "26px",
-  };
-
-  const whyGrid = {
-    display: "grid",
-    gridTemplateColumns: "repeat(5, 1fr)",
-    gap: "16px",
-    marginTop: "28px",
-  };
-
-  const whyCardStyle = {
-    ...glassBoxStyle,
-    padding: "20px 16px",
-    textAlign: "center",
-    color: "#e0f2fe",
-    fontWeight: "700",
-    fontSize: "14px",
-  };
-
-  const ctaStyle = {
-    ...containerStyle,
-    marginTop: "30px",
-    marginBottom: "70px",
-    padding: "45px 30px",
-    textAlign: "center",
-    ...glassBoxStyle,
-  };
-
-  const buttonStyle = {
-    marginTop: "24px",
-    padding: "13px 34px",
-    background: "linear-gradient(135deg, #0284c7, #38bdf8)",
-    border: "none",
-    borderRadius: "10px",
-    color: "#ffffff",
-    fontSize: "16px",
-    fontFamily: "Inter",
-    fontWeight: "700",
-    cursor: "pointer",
-    boxShadow: "0 14px 28px rgba(14,165,233,0.28)",
-  };
-
   return (
-    <div style={pageStyle}>
-      {/* HERO */}
-      <section style={heroStyle} className="about-hero">
-        <div>
-          <p style={eyebrowStyle}>ElectroNova Systems</p>
-
-          <h1 style={heroTitleStyle}>About Us</h1>
-
-          <p style={{ ...textStyle, maxWidth: "620px", fontSize: "18px" }}>
-            Empowering innovation through Robotics, AI, IoT, and future-ready
-            education.
-          </p>
-
-          <div
-            style={{
-              width: "90px",
-              height: "3px",
-              background: "linear-gradient(90deg, #06b6d4, transparent)",
-              marginTop: "26px",
-              borderRadius: "999px",
-            }}
-          ></div>
-        </div>
-
-        <div style={heroImageBox}>
-          <img src={roboLab} alt="Students learning robotics" style={heroImageStyle} />
-        </div>
-      </section>
-
-      {/* WHO WE ARE + OUR IMPACT */}
-      <section style={sectionStyle}>
-        <div style={twoColumnGrid} className="about-two-grid">
-          <div style={contentCardStyle}>
-            <h2 style={{ ...headingStyle, textAlign: "left" }}>Who We Are</h2>
-            <p style={textStyle}>
-              ElectroNova System is a leading organization dedicated to
-              advancing Robotics, Artificial Intelligence (AI), Internet of
-              Things (IoT), and STEM & STEAM education. We provide high-quality
-              robotics kits, training solutions, and lab setup services designed
-              to promote hands-on learning and innovation.
-            </p>
-          </div>
-
-          <div style={contentCardStyle}>
-            <h2 style={{ ...headingStyle, textAlign: "left" }}>Our Impact</h2>
-            <p style={textStyle}>
-              We collaborate with private institutions, government schools, and
-              Atal Tinkering Labs (ATLs) to establish world-class innovation
-              labs. Our goal is to inspire creativity, problem-solving, and
-              technological thinking from an early stage.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE DO */}
-      <section style={sectionStyle}>
-        <h2 style={headingStyle}>What We Do</h2>
-
-        <p
-          style={{
-            ...textStyle,
-            textAlign: "center",
-            maxWidth: "850px",
-            margin: "0 auto",
-          }}
-        >
-          We design and deliver innovative learning solutions that bring
-          technology and creativity together through advanced tools, training,
-          and infrastructure.
-        </p>
-
-        <div style={featureGrid} className="about-feature-grid">
-          {whatWeDo.map((item, index) => (
-            <div
-              key={index}
-              style={featureCardStyle}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-8px)";
-                e.currentTarget.style.boxShadow =
-                  "0 22px 48px rgba(56,189,248,0.22)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 18px 45px rgba(0,0,0,0.25), 0 0 28px rgba(56,189,248,0.14)";
+    <div style={page}>
+      <div className="container py-5">
+        {/* ABOUT HERO */}
+        <section className="row align-items-center my-5">
+          <div className="col-12 col-md-6 text-center text-md-start">
+            <h1
+              style={{
+                ...heading,
+                fontSize: "clamp(3rem, 6vw, 5.2rem)",
+                marginBottom: "22px",
               }}
             >
-              <div style={iconCircleStyle}>
-                <i className={item.icon}></i>
-              </div>
-              <h3
+              About Us
+            </h1>
+
+            <h3
+              style={{
+                color: "#e5e7eb",
+                fontSize: "20px",
+                fontWeight: "bold",
+                lineHeight: "1.5",
+                marginBottom: "20px",
+              }}
+            >
+              Empowering Tomorrow’s Innovators Through Hands-On STEM Education
+            </h3>
+
+            <p style={para}>
+              ElectroNova Systems is an organization offering STEM programs for
+              ages 5 and above. We prepare students to build essential
+              21st-century skills through teamwork, creativity, and critical
+              thinking using robotics, coding, and embedded systems
+              technologies. Our professional network of trainers and teachers
+              provides support to budding engineers and students, fostering
+              real-world connections and endless possibilities in STEM.
+            </p>
+
+            <div
+              style={{
+                width: "90px",
+                height: "3px",
+                background: "linear-gradient(90deg, #06b6d4, transparent)",
+                marginTop: "26px",
+              }}
+            />
+          </div>
+
+          <div className="col-12 col-md-6 text-center mt-4 mt-md-0">
+            <div
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                padding: "14px",
+                borderRadius: "20px",
+                backdropFilter: "blur(10px)",
+                display: "inline-block",
+                maxWidth: "620px",
+                width: "100%",
+                border: "1px solid rgba(255,255,255,0.14)",
+                boxShadow: "0 0 28px rgba(56,189,248,0.12)",
+              }}
+            >
+              <img
+                src={roboLab}
+                alt="Students learning robotics"
+                className="img-fluid"
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "15px",
-                  fontWeight: "800",
-                  margin: 0,
-                  color: "#ffffff",
+                  width: "100%",
+                  height: "300px",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  borderRadius: "14px",
+                  display: "block",
                 }}
-              >
-                {item.title}
-              </h3>
+              />
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* WHAT YOU WILL LEARN */}
-      <section style={sectionStyle}>
-        <div style={centerContentCardStyle}>
-          <h2 style={headingStyle}>What You Will Learn</h2>
+        {/* WHAT WE DO */}
+        <section className="my-5 py-4 text-center">
+          <h2 style={heading}>What We Do</h2>
 
-          <div style={buttonWrapStyle}>
+          <p style={{ ...para, maxWidth: "850px", margin: "0 auto" }}>
+            We design and deliver innovative learning solutions that bring
+            technology and creativity together through advanced tools, training,
+            and infrastructure.
+          </p>
+
+          <div className="row g-4 mt-4">
+            {whatWeDo.map(([icon, title, desc], index) => (
+              <div className="col-12 col-md-6 col-lg-3" key={index}>
+                <div
+                  style={card}
+                  onMouseEnter={glowEnter}
+                  onMouseLeave={glowLeave}
+                >
+                  <div style={iconCircle}>
+                    <i className={icon}></i>
+                  </div>
+
+                  <h5 style={{ color: "white", fontWeight: "bold" }}>
+                    {title}
+                  </h5>
+
+                  <p style={{ ...para, fontSize: "14px" }}>{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* MISSION AND VISION */}
+        <section className="my-5 py-4">
+          <h2 className="text-center" style={heading}>
+            Our Mission & Vision
+          </h2>
+
+          <div className="row g-4 mt-4">
+            <div className="col-12 col-md-6">
+              <div style={{ ...card, borderLeft: `5px solid ${yellow}` }}>
+                <div style={{ fontSize: "36px", lineHeight: "1" }}>“</div>
+
+                <h3
+                  style={{
+                    color: yellow,
+                    fontFamily: "Orbitron",
+                    fontSize: "1.35rem",
+                    marginBottom: "18px",
+                  }}
+                >
+                  Our Mission
+                </h3>
+
+                <p style={para}>
+                  To empower students and institutions with hands-on STEM
+                  education that builds teamwork, creativity, critical thinking,
+                  and real-world problem-solving skills. Through robotics,
+                  coding, and embedded systems, we aim to prepare young
+                  innovators for the technologies of tomorrow.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <div style={{ ...card, borderLeft: `5px solid ${yellow}` }}>
+                <div style={{ fontSize: "36px", lineHeight: "1" }}>“</div>
+
+                <h3
+                  style={{
+                    color: yellow,
+                    fontFamily: "Orbitron",
+                    fontSize: "1.35rem",
+                    marginBottom: "18px",
+                  }}
+                >
+                  Our Vision
+                </h3>
+
+                <p style={para}>
+                  To inspire every student to explore, create, and succeed as a
+                  future innovator. We envision a generation actively involved
+                  in science, technology, engineering, and creativity, with the
+                  confidence to turn ideas into real-world solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT YOU WILL LEARN */}
+        <section className="my-5 py-4 text-center">
+          <h2 style={heading}>What You Will Learn</h2>
+
+          <p style={{ ...para, maxWidth: "850px", margin: "0 auto" }}>
+            Students explore practical technologies through guided learning,
+            experiments, and project-based activities.
+          </p>
+
+          <div className="d-flex justify-content-center flex-wrap gap-3 mt-4">
             {learnData.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setActive(index)}
-                style={learnButtonStyle(index)}
+                style={learnBtn(index)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 22px rgba(56,189,248,0.35), 0 10px 22px rgba(56,189,248,0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    active === index
+                      ? "0 0 24px rgba(56,189,248,0.45), 0 12px 26px rgba(56,189,248,0.25)"
+                      : "0 0 10px rgba(56,189,248,0.08)";
+                }}
               >
                 {item.title}
               </button>
@@ -400,110 +364,146 @@ function About() {
 
           <p
             style={{
-              ...textStyle,
-              maxWidth: "760px",
-              margin: "26px auto 0",
+              ...para,
+              maxWidth: "800px",
+              margin: "28px auto 0",
+              padding: "22px 0",
+              borderTop: "1px solid rgba(56,189,248,0.4)",
+              borderBottom: "1px solid rgba(56,189,248,0.18)",
               color: "#e0f2fe",
             }}
           >
             {learnData[active].text}
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* MISSION & VISION */}
-      <section style={sectionStyle}>
-        <div style={missionVisionGrid} className="about-two-grid">
-          <div style={contentCardStyle}>
-            <div style={iconCircleStyle}>
-              <i className="fa-solid fa-bullseye"></i>
+        {/* WHY CHOOSE US */}
+        <section className="my-5 py-4">
+          <h2 className="text-center" style={heading}>
+            Why Choose Us?
+          </h2>
+
+          <div className="row align-items-start mt-4">
+            <div className="col-12 col-md-5 mb-4 mb-md-0">
+              <p
+                style={{
+                  color: cyan,
+                  letterSpacing: "4px",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                }}
+              >
+                Why Electronova
+              </p>
+
+              <h3
+                style={{
+                  color: "white",
+                  fontFamily: "Orbitron",
+                  fontSize: "clamp(1.4rem, 2.7vw, 2rem)",
+                  lineHeight: "1.4",
+                  marginBottom: "18px",
+                }}
+              >
+                Learning that connects imagination with real technology.
+              </h3>
+
+              <p style={para}>
+                Our programs make technology simple, practical, and exciting
+                for students. We focus on meaningful learning instead of just
+                theoretical understanding.
+              </p>
             </div>
-            <h3 style={{ ...smallHeadingStyle, textAlign: "center" }}>
-              Our Mission
-            </h3>
-            <p style={{ ...textStyle, textAlign: "center" }}>
-              To empower students and institutions with practical,
-              future-focused technological education.
-            </p>
+
+            <div className="col-12 col-md-7">
+              {whyChoose.map(([title, desc], index) => (
+                <div
+                  key={index}
+                  className="d-flex gap-3 pb-3 mb-3"
+                  style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}
+                >
+                  <div
+                    style={{
+                      minWidth: "42px",
+                      height: "42px",
+                      borderRadius: "50%",
+                      background: yellow,
+                      color: "#06172f",
+                      display: "grid",
+                      placeItems: "center",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <div>
+                    <h5
+                      style={{
+                        color: "white",
+                        fontWeight: "bold",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      {title}
+                    </h5>
+
+                    <p style={{ ...para, fontSize: "14px", marginBottom: 0 }}>
+                      {desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div style={contentCardStyle}>
-            <div style={iconCircleStyle}>
-              <i className="fa-regular fa-lightbulb"></i>
-            </div>
-            <h3 style={{ ...smallHeadingStyle, textAlign: "center" }}>
-              Our Vision
-            </h3>
-            <p style={{ ...textStyle, textAlign: "center" }}>
-              To create a generation of innovators and technology leaders
-              through experiential learning.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section style={sectionStyle}>
-        <h2 style={headingStyle}>Why Choose Us</h2>
-
-        <div style={whyGrid} className="about-why-grid">
-          {whyChoose.map((item, index) => (
-            <div key={index} style={whyCardStyle}>
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={ctaStyle}>
-        <h2
+        {/* CTA */}
+        <section
+          className="my-5 text-center"
           style={{
-            fontFamily: "Orbitron",
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-            letterSpacing: "4px",
-            fontWeight: "500",
-            marginBottom: "10px",
+            ...card,
+            padding: "46px 30px",
           }}
         >
-          Let’s Build the Future Together
-        </h2>
+          <h2 style={heading}>Let’s Build the Future Together</h2>
 
-        <p style={{ ...textStyle, textAlign: "center" }}>
-          Partner with us to create practical, future-ready learning
-          experiences.
-        </p>
+          <p style={{ ...para, textAlign: "center" }}>
+            Partner with us to create practical, future-ready learning
+            experiences.
+          </p>
 
-        <Link to="/contact-us">
-          <button style={buttonStyle}>Contact Us</button>
-        </Link>
-      </section>
-
-      <style>
-        {`
-          @media (max-width: 992px) {
-            .about-hero,
-            .about-two-grid {
-              grid-template-columns: 1fr !important;
-            }
-
-            .about-feature-grid {
-              grid-template-columns: repeat(2, 1fr) !important;
-            }
-
-            .about-why-grid {
-              grid-template-columns: repeat(2, 1fr) !important;
-            }
-          }
-
-          @media (max-width: 576px) {
-            .about-feature-grid,
-            .about-why-grid {
-              grid-template-columns: 1fr !important;
-            }
-          }
-        `}
-      </style>
+          <Link to="/contact-us">
+            <button
+              style={{
+                background: blue,
+                border: "none",
+                padding: "12px 26px",
+                borderRadius: "8px",
+                color: "white",
+                cursor: "pointer",
+                fontWeight: "bold",
+                marginTop: "18px",
+                transition: "all 0.3s ease",
+                boxShadow: "0 0 18px rgba(59,130,246,0.25)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 24px rgba(56,189,248,0.45)";
+                e.currentTarget.style.transform = "translateY(-3px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 18px rgba(59,130,246,0.25)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Contact Us
+            </button>
+          </Link>
+        </section>
+      </div>
     </div>
   );
 }
