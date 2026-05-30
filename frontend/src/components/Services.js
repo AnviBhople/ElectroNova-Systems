@@ -20,7 +20,9 @@ function Services() {
 	};
 
 	const cardStyle = {
-		background: "rgba(255,255,255,0.05)",
+		// background: "rgba(255,255,255,0.05)",
+		backgroundColor: "#dcedfd",
+
 		padding: "20px",
 		borderRadius: "15px",
 		backdropFilter: "blur(10px)",
@@ -29,6 +31,7 @@ function Services() {
 		height: "100%",
 		transition: "all 0.3s ease",
 		cursor: "pointer",
+		border: "1px solid #f8e6e6",
 	};
 
 	const para = {
@@ -116,13 +119,19 @@ function Services() {
 		<div style={sectionStyle}>
 			<div className="container">
 				<div className="text-center mb-5">
-					<h1 style={{ fontFamily: "Orbitron", marginTop: "40px" }}>
+					<h1
+						style={{
+							fontFamily: "Orbitron",
+							marginTop: "40px",
+							color: "#FFD51E",
+							fontWeight: "bold",
+						}}>
 						Services We Provide
 					</h1>
 					<p
 						style={{
 							fontWeight: "normal",
-							fontSize: "20px",
+							fontSize: "1.2rem",
 							fontFamily: "Inter",
 						}}>
 						Transforming ideas into innovation through technology-driven
@@ -144,9 +153,9 @@ function Services() {
 							<div
 								style={cardStyle}
 								onMouseEnter={(e) => {
-									e.currentTarget.style.transform = "scale(1.05)";
+									e.currentTarget.style.transform = "scale(1.01)";
 									e.currentTarget.style.boxShadow =
-										"0 10px 30px rgb(243, 239, 239)";
+										"0 5px 5px rgb(243, 239, 239)";
 								}}
 								onMouseLeave={(e) => {
 									e.currentTarget.style.transform = "scale(1)";
@@ -163,7 +172,13 @@ function Services() {
 									}}
 								/>
 								<br />
-								<h5 style={{ fontFamily: "Inter", fontSize: "x-large" }}>
+								<h5
+									style={{
+										fontFamily: "Inter",
+										fontSize: "x-large",
+										color: "#000",
+										fontWeight: "bold",
+									}}>
 									{service.title}
 								</h5>
 							</div>
@@ -171,7 +186,14 @@ function Services() {
 					))}
 				</div>
 				<div className="text-center mb-4">
-					<h2 style={{ fontFamily: "Orbitron" }}>FAQs</h2>
+					<h1
+						style={{
+							fontFamily: "Orbitron",
+							color: "#FFD51E",
+							fontWeight: "bold",
+						}}>
+						FAQs
+					</h1>
 				</div>
 				<div className="row">
 					{faqs.map((faq, index) => (

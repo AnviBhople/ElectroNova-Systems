@@ -72,9 +72,8 @@ function Team() {
 		width: "800px",
 		height: "auto",
 		borderRadius: "20px",
-		boxShadow:
-			"0 20px 40px rgba(237, 229, 229, 0.4), 0 0 20px rgba(59, 130, 246, 0.6)",
-		border: "1px solid rgba(255, 255, 255, 0.6)",
+		boxShadow: "0 8px 8px rgba(237, 229, 229, 0.4)",
+		border: "2px solid #3b82f6",
 		filter: "drop-shadow(0px 10px 10px rgba(0,0,0,0.6))",
 	};
 
@@ -88,6 +87,7 @@ function Team() {
 							letterSpacing: "4px",
 							fontWeight: "bold",
 							marginTop: "100px",
+							color: "#FFD51E",
 						}}>
 						OUR CORE TEAM
 					</h1>
@@ -102,10 +102,15 @@ function Team() {
 								style={imgStyle}
 								className="mx-auto d-block"
 							/>{" "}
-							<h4 style={{ fontFamily: "Orbitron", fontSize: "1.1rem" }}>
+							<h4
+								style={{
+									fontFamily: "Orbitron",
+									fontSize: "1.1rem",
+									color: "#FFD51E",
+								}}>
 								ARJUN MAHORE
 							</h4>
-							<p className="text-primary fw-bold small">CEO & FOUNDER</p>
+							<p className="text-white fw-bold small">CEO & FOUNDER</p>
 						</div>
 					</div>
 					<div className="col-10 col-sm-6 col-lg-3">
@@ -116,27 +121,37 @@ function Team() {
 								style={imgStyle}
 								className="mx-auto d-block"
 							/>{" "}
-							<h4 style={{ fontFamily: "Orbitron", fontSize: "1.1rem" }}>
+							<h4
+								style={{
+									fontFamily: "Orbitron",
+									fontSize: "1.1rem",
+									color: "#FFD51E",
+								}}>
 								SHREYASH GAWANDE
 							</h4>
-							<p className="text-primary fw-bold small">CEO & FOUNDER</p>
+							<p className="text-white fw-bold small">CEO & FOUNDER</p>
 						</div>
 					</div>
 				</div>
 
 				<div className="row justify-content-center mb-5">
 					<div className="col-10 col-sm-6 col-lg-3 text-center">
-						<div style={cardStyle}>
+						<div style={{ ...cardStyle, border: "2px solid #3b82f6" }}>
 							<img
 								src={mohImg}
 								alt="Moh. Akhtar"
 								style={imgStyle}
 								className="mx-auto d-block"
 							/>
-							<h4 style={{ fontFamily: "Orbitron", fontSize: "1.1rem" }}>
+							<h4
+								style={{
+									fontFamily: "Orbitron",
+									fontSize: "1.1rem",
+									color: "#FFD51E",
+								}}>
 								MOH. ATHAR
 							</h4>
-							<p className="text-info small">MANAGING DIRECTOR</p>
+							<p className="text-white small">MANAGING DIRECTOR</p>
 						</div>
 					</div>
 				</div>
@@ -144,7 +159,7 @@ function Team() {
 				<div className="row g-3 justify-content-center">
 					{teamMembers.map((member, index) => (
 						<div className="col-6 col-md-4 col-lg-3" key={index}>
-							<div style={{ ...cardStyle, padding: "15px" }}>
+							<div style={{ ...cardStyle, border: "2px solid #3b82f6" }}>
 								{/* <div
 									style={{ ...imgStyle, width: "100px", height: "100px" }}
 									className="mx-auto bg-secondary"></div> */}
@@ -155,12 +170,16 @@ function Team() {
 									className="mx-auto bg-secondary"
 								/>
 								<h6
-									style={{ fontFamily: "Orbitron", fontSize: "0.9rem" }}
+									style={{
+										fontFamily: "Orbitron",
+										fontSize: "0.9rem",
+										color: "#FFD51E",
+									}}
 									className="mb-1">
 									{member.name}
 								</h6>
 								<p
-									className="text-white-50 small mb-0"
+									className="text-white small mb-0"
 									style={{ fontSize: "0.7rem" }}>
 									{member.role}
 								</p>

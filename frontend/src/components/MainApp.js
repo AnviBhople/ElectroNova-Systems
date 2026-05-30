@@ -19,6 +19,7 @@ function MainApp() {
 		marginBottom: "20px",
 		fontFamily: "Orbitron",
 		fontWeight: "bold",
+		color: "#FFD51E",
 	};
 
 	const subHeadingStyle = {
@@ -31,7 +32,7 @@ function MainApp() {
 	const paragraphStyle = {
 		fontSize: "16px",
 		lineHeight: "1.6",
-		color: "#94a3b8",
+		color: "#c1c8d2",
 		fontFamily: "Inter",
 	};
 
@@ -135,7 +136,14 @@ function MainApp() {
 					</div>
 
 					<div className="col-12 col-md-6 text-center text-md-start mt-4 mt-md-0">
-						<h1 style={{ fontFamily: "Orbitron" }}>What We Do</h1>
+						<h1
+							style={{
+								fontFamily: "Orbitron",
+								color: "#FFD51E",
+								fontWeight: "bolder",
+							}}>
+							What We Do?
+						</h1>
 						<br />
 						<p style={paragraphStyle}>
 							At Electronova System, we design and deliver innovative learning
@@ -149,7 +157,14 @@ function MainApp() {
 
 				<div className="row my-5 align-items-center">
 					<div className="col-12 col-md-6 text-center text-md-start">
-						<h1 style={{ fontFamily: "Orbitron" }}>Why Us?</h1>
+						<h1
+							style={{
+								fontFamily: "Orbitron",
+								color: "#FFD51E",
+								fontWeight: "bold",
+							}}>
+							Why Us?
+						</h1>
 						<br />
 						<p style={paragraphStyle}>
 							Electronova System stands out for its commitment to innovation,
@@ -187,6 +202,7 @@ function MainApp() {
 										fontFamily: "Orbitron",
 										letterSpacing: "4px",
 										fontWeight: "bold",
+										color: "#FFD51E",
 									}}>
 									OUR LEADERSHIP
 								</h2>
@@ -218,7 +234,9 @@ function MainApp() {
 										encourages learning and technical growth."
 									</p>
 									<div className="mt-4 pt-3 border-top border-secondary">
-										<h5 className="mb-0 text-white">Komal Ashokrao Sune</h5>
+										<h5 className="mb-0" style={{ color: "#FFD51E" }}>
+											Komal Ashokrao Sune
+										</h5>
 										<small className="text-primary text-uppercase fw-bold">
 											Head Accountant
 										</small>
@@ -245,7 +263,7 @@ function MainApp() {
 									}}>
 									<h5
 										className="mb-0"
-										style={{ color: "#60a5fa", fontSize: "1.25rem" }}>
+										style={{ color: "#FFD51E", fontSize: "1.3rem" }}>
 										Arjun Panditrao Mahore
 									</h5>
 									<br />
@@ -254,7 +272,7 @@ function MainApp() {
 											CEO & Founder
 										</small>
 									</div>
-
+									<br />
 									<p
 										style={{
 											...quoteStyle,
@@ -297,7 +315,11 @@ function MainApp() {
 										e.currentTarget.style.borderColor = "#dde5f0";
 										e.currentTarget.style.boxShadow = "none";
 									}}>
-									<h5 className="mb-0 text-white">Shreyash Gawande</h5>
+									<h5
+										className="mb-0"
+										style={{ color: "#FFD51E", fontSize: "1.3rem" }}>
+										Shreyash Gawande
+									</h5>
 									<small className="text-secondary text-uppercase fw-bold">
 										Co-founder & Director
 									</small>

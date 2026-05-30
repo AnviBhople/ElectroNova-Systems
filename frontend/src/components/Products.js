@@ -57,9 +57,11 @@ function Products() {
 	];
 
 	const productCardStyle = {
-		backgroundColor: "#111827",
+		backgroundColor: "#e2eefa",
+		// backgroundColor: "#2f3031",
 		borderRadius: "20px",
-		border: "1px solid #fff",
+		// border: "1px solid #c4c0c0",
+		border: "1px solid #000",
 		padding: "30px",
 		textAlign: "center",
 		transition: "all 0.3s ease-in-out",
@@ -67,6 +69,7 @@ function Products() {
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "space-between",
+		color: "black",
 	};
 
 	const productImageStyle = {
@@ -74,10 +77,12 @@ function Products() {
 		height: "180px",
 		objectFit: "contain",
 		marginBottom: "20px",
-		filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.3))",
+		// filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.3))",
 		fontFamily: "Inter",
-		border: "1px solid #fff",
-		backgroundColor: "#003566",
+		border: "2px solid #101010b2",
+		// border: "1px solid #9b9494b2",
+		// backgroundColor: "#003566",
+		backgroundColor: "#3d5770",
 		borderRadius: "20px",
 	};
 
@@ -97,7 +102,12 @@ function Products() {
 			<div className="container py-5">
 				<h1
 					className="text-center mb-5"
-					style={{ fontFamily: "Orbitron", color: "#FFF", marginTop: "50px" }}>
+					style={{
+						fontFamily: "Orbitron",
+						color: "#FFD51E",
+						marginTop: "50px",
+						fontWeight: "bold",
+					}}>
 					OUR &ensp;PRODUCTS
 				</h1>
 				<div className="row g-4">
@@ -122,7 +132,8 @@ function Products() {
 									style={{
 										fontFamily: "Inter",
 										fontSize: "1.5rem",
-										color: "white",
+										color: "black",
+										fontWeight: "bolder",
 									}}>
 									{item.name}
 								</h5>

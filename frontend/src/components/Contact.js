@@ -18,6 +18,7 @@ function Contact() {
 		backdropFilter: "blur(10px)",
 		fontFamily: "Inter",
 		textAlign: "center",
+		border: "1px solid #fff",
 	};
 
 	const buttonStyle = {
@@ -60,14 +61,26 @@ function Contact() {
 
 	const addStyle = {
 		fontFamily: "Inter",
-		fontSize: "larger",
+		fontSize: "1.3rem",
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		alert("Your message has been sent successfully.");
 	};
 
 	return (
 		<div style={sectionStyle}>
 			<div className="container">
 				<div className="text-center mb-5">
-					<h1 style={{ fontFamily: "Orbitron", marginTop: "20px" }}>
+					<h1
+						style={{
+							fontFamily: "Orbitron",
+							marginTop: "20px",
+							color: "#FFD51E",
+							fontWeight: "bold",
+							fontSize: "3rem",
+						}}>
 						Contact Us
 					</h1>
 					<p style={para}>We’d love to hear from you. Reach out anytime.</p>
@@ -78,21 +91,28 @@ function Contact() {
 						<div
 							style={cardStyle}
 							onMouseEnter={(e) => {
-								e.currentTarget.style.transform = "scale(1.05)";
+								e.currentTarget.style.transform = "scale(1.01)";
 								e.currentTarget.style.boxShadow =
-									"0 10px 30px rgb(243, 239, 239)";
+									"0 5px 5px rgb(140, 135, 135)";
 							}}
 							onMouseLeave={(e) => {
 								e.currentTarget.style.transform = "scale(1)";
 								e.currentTarget.style.boxShadow = "none";
 							}}>
-							<h3 style={{ fontFamily: "Orbitron" }}>Get In Touch</h3>
+							<h3
+								style={{
+									fontFamily: "Orbitron",
+									color: "#FFD51E",
+									fontWeight: "bold",
+								}}>
+								Get In Touch
+							</h3>
 							<br />
-							<p>📞 +91 7821826676</p>
+							<p style={{ fontSize: "1.3rem" }}>📞 +91 7821826676</p>
 							<br />
-							<p>📞 +91 7796179037</p>
+							<p style={{ fontSize: "1.3rem" }}>📞 +91 7796179037</p>
 							<br />
-							<p>📧 electronova@gmail.com</p>
+							<p style={{ fontSize: "1.3rem" }}>📧 electronova@gmail.com</p>
 
 							<Link to="tel:+917821826676">
 								<button style={buttonStyle}>Call Now</button>
@@ -115,22 +135,37 @@ function Contact() {
 						<div
 							style={cardStyle}
 							onMouseEnter={(e) => {
-								e.currentTarget.style.transform = "scale(1.05)";
+								e.currentTarget.style.transform = "scale(1.01)";
 								e.currentTarget.style.boxShadow =
-									"0 10px 30px rgb(243, 239, 239)";
+									"0 5px 5px rgb(140, 135, 135)";
 							}}
 							onMouseLeave={(e) => {
 								e.currentTarget.style.transform = "scale(1)";
 								e.currentTarget.style.boxShadow = "none";
 							}}>
-							<h3 style={{ fontFamily: "Orbitron" }}>Our Address</h3>
+							<h3
+								style={{
+									fontFamily: "Orbitron",
+									color: "#FFD51E",
+									fontWeight: "bold",
+								}}>
+								Our Address
+							</h3>
 							<br />
 							<p style={addStyle}>
 								📍House No. 45/2, Gajanan Township, Kathora, <br />
 								Amravati - 444602, Maharashtra, India
 							</p>
 							<br />
-							<h3 style={{ fontFamily: "Orbitron" }}>Business Hours</h3>
+							<br />
+							<h3
+								style={{
+									fontFamily: "Orbitron",
+									color: "#FFD51E",
+									fontWeight: "bold",
+								}}>
+								Opening Hours
+							</h3>
 							<p style={addStyle}>
 								Monday – Saturday <br />
 								9:00 AM – 6:00 PM
@@ -139,35 +174,128 @@ function Contact() {
 					</div>
 				</div>
 
-				<div className="row">
-					<div className="col-12">
-						<div style={cardStyle}>
-							<h3 style={{ fontFamily: "Orbitron" }}>Send Us a Message</h3>
+				<div
+					className="row align-items-center"
+					style={{ minHeight: "80vh", color: "#fff", padding: "20px" }}>
+					<div className="col-12 col-md-5 mb-5 mb-md-0 text-center text-md-start">
+						<p
+							className="mb-4"
+							style={{
+								fontSize: "1.3rem",
+								lineHeight: "1.6",
+								fontWeight: "bold",
+								color: "#fff",
+								fontFamily: "Inter",
+							}}>
+							Enter your contact information to complete your booking.
+						</p>
+
+						<p
+							style={{
+								fontSize: "1.2rem",
+								fontWeight: "500",
+								color: "#FFD51E",
+							}}>
+							Need help? &ensp;
 							<br />
-							<form>
-								<input
-									type="text"
-									placeholder="Your Name"
-									className="form-control mb-3"
-									style={inputStyle2}
-								/>
+							<span style={{ color: "#ff4d6d" }}>☎</span> +91 7796179037
+							<br />
+							<span style={{ color: "#ff4d6d" }}>☎</span>
+							+91 7821826676
+						</p>
+					</div>
 
-								<input
-									type="email"
-									placeholder="Your Email"
-									className="form-control mb-3"
-									style={inputStyle2}
-								/>
+					<div className="col-12 col-md-7">
+						<div style={cardStyle}>
+							<form onSubmit={handleSubmit}>
+								<div className="mb-3">
+									<label
+										className="form-label d-block text-start mb-1"
+										style={{ fontWeight: "600", fontFamily: "inherit" }}>
+										Name <span style={{ color: "red" }}>*</span>
+									</label>
+									<input
+										type="text"
+										placeholder="Josh Doe"
+										className="form-control"
+										style={{ ...inputStyle2, borderRadius: "10px" }}
+									/>
+								</div>
 
-								<textarea
-									placeholder="Your Message"
-									rows="5"
-									className="form-control mb-4"
-									style={inputStyle}></textarea>
+								<div className="mb-3">
+									<label
+										className="form-label d-block text-start mb-1"
+										style={{ fontWeight: "600", fontFamily: "inherit" }}>
+										Email <span style={{ color: "red" }}>*</span>
+									</label>
+									<input
+										type="email"
+										placeholder="example@gmail.com"
+										className="form-control"
+										style={{ ...inputStyle2, borderRadius: "10px" }}
+									/>
+								</div>
 
-								<button type="submit" style={buttonStyle}>
-									Submit
-								</button>
+								<div className="mb-3">
+									<label
+										className="form-label d-block text-start mb-1"
+										style={{ fontWeight: "600", fontFamily: "inherit" }}>
+										City <span style={{ color: "red" }}>*</span>
+									</label>
+									<input
+										type="text"
+										placeholder="Mumbai"
+										className="form-control"
+										style={{ ...inputStyle2, borderRadius: "10px" }}
+									/>
+								</div>
+
+								<div className="mb-3">
+									<label
+										className="form-label d-block text-start mb-1"
+										style={{ fontWeight: "600", fontFamily: "inherit" }}>
+										Phone Number <span style={{ color: "red" }}>*</span>
+									</label>
+									<input
+										type="tel"
+										placeholder="+91-1234567890"
+										className="form-control"
+										style={{ ...inputStyle2, borderRadius: "10px" }}
+									/>
+								</div>
+
+								<div className="mb-4">
+									<label
+										className="form-label d-block text-start mb-1"
+										style={{ fontWeight: "600", fontFamily: "inherit" }}>
+										Additional Query
+									</label>
+									<textarea
+										placeholder="Send us a message..."
+										rows="4"
+										className="form-control"
+										style={{ ...inputStyle, borderRadius: "10px" }}></textarea>
+								</div>
+
+								<div className="text-center mt-4">
+									<button
+										type="submit"
+										style={{
+											...buttonStyle,
+											backgroundColor: "#ffcc00",
+											color: "#000",
+											fontWeight: "bolder",
+											border: "none",
+											padding: "15px 50px",
+											letterSpacing: "1px",
+											fontSize: "1.3rem",
+											borderRadius: "10px",
+											display: "inline-block",
+											fontFamily: "Inter",
+										}}>
+										Submit
+									</button>
+								</div>
 							</form>
 						</div>
 					</div>

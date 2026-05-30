@@ -56,13 +56,8 @@ function Navbar() {
 				<div className="collapse navbar-collapse" id="navbarContent">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
-							<Link to="/" style={navLinkStyle} className="nav-link">
-								Home
-							</Link>
-						</li>
-						<li className="nav-item">
 							<Link to="/about-us" style={navLinkStyle} className="nav-link">
-								About
+								Our Story
 							</Link>
 						</li>
 
@@ -83,7 +78,7 @@ function Navbar() {
 								to="/our-achievements"
 								style={navLinkStyle}
 								className="nav-link">
-								Achievements
+								Our Achievements
 							</Link>
 						</li>
 
