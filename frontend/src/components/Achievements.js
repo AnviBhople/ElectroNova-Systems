@@ -37,8 +37,8 @@ function Achievements() {
 
 	const sectionLabel = {
 		...inter,
-		fontSize: "12px",
-		letterSpacing: "5px",
+		fontSize: "14px",
+		letterSpacing: "4px",
 		color: "#60a5fa",
 		textTransform: "uppercase",
 		marginBottom: "10px",
@@ -46,9 +46,9 @@ function Achievements() {
 
 	const sectionTitle = {
 		...orbitron,
-		fontSize: "38px",
+		fontSize: "44px",
 		fontWeight: "bold",
-		color: "#ffffff",
+		color: "#FFD51E",
 		marginBottom: "14px",
 	};
 
@@ -187,45 +187,60 @@ function Achievements() {
 	];
 
 	const stats = [
-		{ num: "7,000+", label: "Students Reached", icon: "bi-people-fill" },
-		{ num: "100+", label: "Schools Covered", icon: "bi-building" },
-		{ num: "150+", label: "Workshops Done", icon: "bi-tools" },
-		{ num: "50+", label: "College Workshops", icon: "bi-mortarboard-fill" },
+		{ num: "3,000+", label: "Students Reached", icon: "bi-people-fill" },
+		{ num: "100+", label: "Workshops Done", icon: "bi-tools" },
+		{ num: "50+", label: "Schools Covered", icon: "bi-building" },
 		{ num: "2", label: "Patents Granted", icon: "bi-award-fill" },
 	];
 
 	const highlights = [
-		{
-			icon: "bi-people-fill",
-			title: "Student Reach",
-			value: "7,000+",
-			points: ["Hands-on Robotics", "AI & IoT Training", "ATL Programs"],
-		},
-		{
-			icon: "bi-cpu-fill",
-			title: "STEM Coverage",
-			value: "Robotics | AI | Drones | IoT",
-			points: ["Embedded Systems", "Drone Technology", "AI Ethics"],
-		},
-		{
-			icon: "bi-tools",
-			title: "Skill Development",
-			value: "Practical Learning",
-			points: ["Problem Solving", "Hands-on Assembly", "Team Collaboration"],
-		},
-		{
-			icon: "bi-globe",
-			title: "Democratizing Tech",
-			value: "Affordable Education",
-			points: ["Low-Cost Kits", "Community Workshops", "Regional Language Support"],
-		},
-	];
+  {
+    icon: "bi-building-check",
+    title: "School Workshop Impact",
+    value: "3,000+ Students Reached",
+    points: [
+      "Robotics, AI & IoT sessions",
+      "Hands-on technology learning",
+      "School-level STEM exposure",
+    ],
+  },
+  {
+    icon: "bi-lightbulb-fill",
+    title: "ATL & Innovation Learning",
+    value: "Atal Tinkering Lab Support",
+    points: [
+      "Project-building activities",
+      "Innovation-focused sessions",
+      "Practical experiments",
+    ],
+  },
+  {
+    icon: "bi-tools",
+    title: "Practical Skill Building",
+    value: "Learning by Doing",
+    points: [
+      "Problem solving",
+      "Hands-on assembly",
+      "Team collaboration",
+    ],
+  },
+  {
+    icon: "bi-globe2",
+    title: "Accessible STEM Education",
+    value: "Affordable Learning Model",
+    points: [
+      "Low-cost kits",
+      "Community workshops",
+      "Guided trainer support",
+    ],
+  },
+];
 
 	const milestones = [
 		{
 			date: "Feb 3, 2026",
 			title: "AI Basics Workshops Begin",
-			sub: "Launched AI fundamentals sessions across multiple Amravati schools",
+			sub: "Introduced Students to AI fundamentals sessions across multiple Amravati schools",
 		},
 		{
 			date: "Feb 16, 2026",
@@ -235,22 +250,22 @@ function Achievements() {
 		{
 			date: "Feb 18–21, 2026",
 			title: "Drone Tech & ATL Sessions",
-			sub: "Comprehensive drone & ATL robotics sessions across 8+ schools simultaneously",
+			sub: "Drone basics, ATL-focused activities, and student innovation learning.",
 		},
 		{
 			date: "Feb 24–26, 2026",
 			title: "Mass School Certification Drive",
-			sub: "Formal appreciation letters received from 6 schools in a single week",
+			sub: "Recognized multiple schools for successful participation in STEM workshops.",
 		},
 		{
 			date: "Mar 2–3, 2026",
 			title: "IIT Kanpur — Boeing Workshops",
-			sub: "Co-founder served as Atal Trainer at IIT Kanpur Aero Modeling Festival",
+			sub: "Participated in advanced aeromodelling and innovation-focused workshop exposure.",
 		},
 		{
 			date: "Ongoing",
 			title: "2 National Patents Granted",
-			sub: "Load Carrying Device · Food Feeding Machine for Differently-Abled",
+			sub: "1. Load Carrying Device_ 2· Food Feeding Machine for Differently-Abled",
 		},
 	];
 
@@ -359,7 +374,7 @@ function Achievements() {
 				{/* ── KEY HIGHLIGHTS ── */}
 				<div className="text-center mb-4">
 					<p style={sectionLabel}>What We've Accomplished</p>
-					<h2 style={{ ...orbitron, fontSize: "26px", marginBottom: "30px" }}>
+					<h2 style={{ ...orbitron, fontSize: "26px",fontWeight: "800", color: "#FFD51E", marginBottom: "30px" }}>
 						KEY HIGHLIGHTS
 					</h2>
 				</div>
@@ -368,11 +383,11 @@ function Achievements() {
 						<div className="col-12 col-md-6 col-lg-3" key={i}>
 							<div style={hlBox}>
 								<i className={`bi ${h.icon}`} style={{ fontSize: "26px", color: "#60a5fa", marginBottom: "12px", display: "block" }}></i>
-								<div style={{ ...inter, fontSize: "11px", color: "#60a5fa", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "6px" }}>{h.title}</div>
-								<div style={{ ...orbitron, fontSize: "15px", color: "#e2e8f0", marginBottom: "12px", fontWeight: "bold" }}>{h.value}</div>
+								<div style={{ ...inter, fontSize: "14px", color: "#60a5fa", textTransform: "uppercase",fontWeight: "bold", marginBottom: "6px" }}>{h.title}</div>
+								<div style={{ ...inter, fontSize: "15px", color: "#e2e8f0", marginBottom: "12px", fontWeight: "bold" }}>{h.value}</div>
 								<ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
 									{h.points.map((p, j) => (
-										<li key={j} style={{ ...inter, fontSize: "13px", color: "#64748b", marginBottom: "4px" }}>
+										<li key={j} style={{ ...inter, fontSize: "14px", color: "#e9da0f", marginBottom: "4px" }}>
 											<i className="bi bi-check2" style={{ color: "#3b82f6", marginRight: "6px" }}></i>{p}
 										</li>
 									))}
@@ -409,7 +424,7 @@ function Achievements() {
 				{/* ── ACHIEVEMENT TIMELINE ── */}
 				<div className="text-center mb-4">
 					<p style={sectionLabel}>Our Journey</p>
-					<h2 style={{ ...orbitron, fontSize: "26px", marginBottom: "36px" }}>
+					<h2 style={{ ...orbitron, fontSize: "26px", fontWeight: "800", color: "#FFD51E", marginBottom: "36px" }}>
 						ACHIEVEMENT TIMELINE
 					</h2>
 				</div>
@@ -434,10 +449,10 @@ function Achievements() {
 									width: "180px",
 									transition: "all 0.3s ease",
 								}}>
-									<div style={{ ...inter, fontSize: "10px", color: "#3b82f6", letterSpacing: "1px", marginBottom: "5px" }}>{m.date}</div>
-									<div style={{ ...inter, fontSize: "13px", fontWeight: "600", color: "#e2e8f0", marginBottom: "5px", lineHeight: "1.4" }}>{m.title}</div>
+									<div style={{ ...inter, fontSize: "12px", color: "#3b82f6", marginBottom: "5px" }}>{m.date}</div>
+									<div style={{ ...inter, fontSize: "14px", fontWeight: "600", color: "#e2e8f0", marginBottom: "5px", lineHeight: "1.4" }}>{m.title}</div>
 									{i === activeMilestone && (
-										<div style={{ ...inter, fontSize: "12px", color: "#64748b", lineHeight: "1.5", marginTop: "6px", borderTop: "1px solid rgba(59,130,246,0.2)", paddingTop: "6px" }}>{m.sub}</div>
+										<div style={{ ...inter, fontSize: "12px", color: "#e1ecfa", lineHeight: "1.5", marginTop: "6px", borderTop: "1px solid rgba(59,130,246,0.2)", paddingTop: "6px" }}>{m.sub}</div>
 									)}
 								</div>
 							</div>
@@ -448,7 +463,7 @@ function Achievements() {
 				{/* ── SCHOOL CERTIFICATIONS ── */}
 				<div className="text-center mb-4">
 					<p style={sectionLabel}>Verified By</p>
-					<h2 style={{ ...orbitron, fontSize: "26px", marginBottom: "10px" }}>
+					<h2 style={{ ...orbitron, fontSize: "26px",fontWeight: "800", color: "#FFD51E", marginBottom: "10px" }}>
 						SCHOOL CERTIFICATIONS
 					</h2>
 					<p style={{ ...inter, fontSize: "14px", color: "#64748b", marginBottom: "30px" }}>
@@ -562,7 +577,7 @@ function Achievements() {
 				{/* ── FOUNDER RECOGNITION ── */}
 				<div className="text-center mb-4">
 					<p style={sectionLabel}>Our Leaders</p>
-					<h2 style={{ ...orbitron, fontSize: "26px", marginBottom: "30px" }}>
+					<h2 style={{ ...orbitron, fontSize: "26px",fontWeight: "800", color: "#FFD51E", marginBottom: "30px" }}>
 						FOUNDER RECOGNITION
 					</h2>
 				</div>
@@ -578,12 +593,12 @@ function Achievements() {
 									...orbitron, fontSize: "14px", fontWeight: "bold", color: "#93c5fd",
 								}}>AM</div>
 								<div>
-									<div style={{ ...inter, fontSize: "16px", fontWeight: "600", color: "#93c5fd" }}>Arjun Panditrao Mahore</div>
+									<div style={{ ...inter, fontSize: "16px", fontWeight: "800", color: "#FFD51E" }}>Arjun Panditrao Mahore</div>
 									<div style={{ ...inter, fontSize: "12px", color: "#3b82f6" }}>CEO & Founder</div>
-									<div style={{ ...inter, fontSize: "11px", color: "#475569" }}>BA in Yog Shastra · Pursuing MBA in IT</div>
+									<div style={{ ...inter, fontSize: "11px", color: "#d2dae4" }}>BA in Yog Shastra · Pursuing MBA in IT</div>
 								</div>
 							</div>
-							<p style={{ ...inter, fontSize: "13px", color: "#94a3b8", lineHeight: "1.8", marginBottom: "16px" }}>
+							<p style={{ ...inter, fontSize: "13px", color: "#f2f1eb", lineHeight: "1.8", marginBottom: "16px" }}>
 								Two-time University Colour Coat holder at Avishkar Competition, winner of 21 science project competitions, holder of 2 national patents, NCC B Certificate holder, Army Attachment Camp alumnus, and mentor at IIT Kanpur for Boeing Workshops.
 							</p>
 							<div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
@@ -604,12 +619,12 @@ function Achievements() {
 									...orbitron, fontSize: "14px", fontWeight: "bold", color: "#93c5fd",
 								}}>SG</div>
 								<div>
-									<div style={{ ...inter, fontSize: "16px", fontWeight: "600", color: "#93c5fd" }}>Shreyash Gawande</div>
+									<div style={{ ...inter, fontSize: "16px", fontWeight: "800", color: "#FFD51E" }}>Shreyash Gawande</div>
 									<div style={{ ...inter, fontSize: "12px", color: "#3b82f6" }}>Co-Founder & Director</div>
-									<div style={{ ...inter, fontSize: "11px", color: "#475569" }}>Expert in Embedded Systems, IoT & Robotics</div>
+									<div style={{ ...inter, fontSize: "11px", color: "#d2dae4" }}>Expert in Embedded Systems, IoT & Robotics</div>
 								</div>
 							</div>
-							<p style={{ ...inter, fontSize: "13px", color: "#94a3b8", lineHeight: "1.8", marginBottom: "16px" }}>
+							<p style={{ ...inter, fontSize: "13px", color: "#f2f1eb", lineHeight: "1.8", marginBottom: "16px" }}>
 								Conducted workshops in over 100 schools reaching more than 7,000 students, and 50+ workshops across engineering colleges. Atal Trainer with experience at IIT Kanpur during the Aero Modeling Festival. Designed multiple projects in electronics and telecommunication.
 							</p>
 							<div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
@@ -630,7 +645,6 @@ function Achievements() {
 						<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
 							<div>
 								<h3 style={{ ...orbitron, fontSize: "20px", color: "#fff", marginBottom: "4px" }}>All Certificates</h3>
-								<p style={{ ...inter, fontSize: "13px", color: "#475569" }}>15 schools have formally recognized Electronova's workshops</p>
 							</div>
 							<button
 								onClick={() => setShowCertModal(false)}
