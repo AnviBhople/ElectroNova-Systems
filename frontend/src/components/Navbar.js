@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./images/ElectroNova_logo_trial.png";
+import logo from "./images/bgLogo.png";
+// import logo from "./images/ElectroNova_logo_trial.png";
 
 function Navbar() {
 	const navbarStyle = {
 		backgroundColor: "transparent",
+		// backgroundColor: "#62646a00",
 		padding: "20px 30px",
 		fontFamily: "Orbitron",
 		position: "fixed",
@@ -24,6 +26,7 @@ function Navbar() {
 		fontSize: "20px",
 		margin: "0 15px 0 20px",
 		color: "#fff",
+		fontWeight: "bold",
 		cursor: "pointer",
 		textDecoration: "none",
 	};

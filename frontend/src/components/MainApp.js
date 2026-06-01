@@ -70,7 +70,7 @@ function MainApp() {
 		borderRadius: "20px",
 		backdropFilter: "blur(10px)",
 		display: "inline-block",
-		marginTop: "20px",
+		marginTop: "200px",
 	};
 
 	const baseCardStyle = {
